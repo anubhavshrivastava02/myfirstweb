@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KTJ Project</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 35px;
+
+        }
+
+        .navbar {
+
+            height: 57px;
+            border-radius: 75px;
+        }
+
+        /* .navigation {         // Cant be done properly
+            position: fixed;
+            right: 51px;
+            background-color: white;
+            z-index: +1;
+        } */
+
+        .logo {
+            width: 85px;
+            display: block;
+            border-radius: 75px;
+            position: relative;
+            float: left;
+            margin: 0px -1px;
+
+        }
+
+        h2 {
+            display: block;
+            justify-content: center;
+            font-family: 'Brush Script MT', cursive;
+            position: relative;
+            float: left;
+            margin: -13px -36px;
+            padding: 3px 46px;
+
+            color: rgb(247, 19, 76);
+            font-size: 57px;
+        }
+
+        .navbar li {
+            list-style: none;
+            float: right;
+
+        }
+
+        .navbar li a {
+            margin: 12px 12px;
+            padding: 5px 5px;
+            color: rgb(58, 56, 56);
+            font-family: "Trebuchet MS", Helvetica, sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.5s;
+        }
+
+        .navbar ul {
+            position: relative;
+            float: right;
+
+
+        }
+
+        .navbar li a:hover {
+
+            height: min-content;
+            background-color: white;
+            border-radius: 75px;
+            color: rgba(247, 19, 76, 0.863);
+            font-size: 110%;
+
+
+
+        }
+
+        /* .navbar input {
+            background-color: rgba(255, 255, 255, 0.904);
+            border-radius: 25px;
+            border-color: rgb(250, 250, 250);
+            position: relative;
+            float: right;
+            transition: ease-in-out, width .35s ease-in-out;
+
+        } */
+
+        /* .navbar input:hover {
+
+            width: 12%;
+
+
+        } */
+
+        .container {
+            height: 400px;
+            width: 100%;
+
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .item {
+            height: 100%;
+            width: 50%;
+
+            margin: 30px;
+            padding: 3px;
+
+        }
+
+        #item-1 {
+            font-size: 28px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #item-2 {
+            height: 493px;
+            padding-left: 86px;
+        }
+
+
+
+
+        span {
+            color: rgb(247, 19, 76);
+        }
+
+        .container button {
+            background-color: rgb(247, 19, 76);
+            font-family: 'Courier New', Courier, monospace;
+            border-radius: 7px;
+            border: 2px solid rgb(247, 19, 76);
+            height: 50px;
+            width: 150px;
+            padding: 3px 3px;
+            color: white;
+            font-weight: bolder;
+            border-color: white;
+            font-size: large;
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .container button:hover {
+            background-color: white;
+            border: 2px solid rgb(247, 19, 76);
+            color: rgb(247, 19, 76);
+            height: 55px;
+            width: 155px;
+
+        }
+
+        #our-specialisation {
+            position: absolute;
+            left: 66px;
+            top: 683px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: xx-large;
+        }
+
+        h3 {
+            position: absolute;
+            left: 38px;
+            top: 404px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: xx-large;
+        }
+
+        .special {
+            position: absolute;
+            left: 26px;
+            top: 780px;
+            width: 700px;
+            display: flex;
+            transition: 2s;
+        }
+
+        .spec {
+
+            height: 336px;
+            width: 290px;
+            border-radius: 5px;
+            background-color: rgb(253, 243, 246);
+            margin: 13px 38px;
+            padding: 6px;
+            font-family: 'Courier New', Courier, monospace;
+
+        }
+
+        .spec button {
+            background-color: rgb(253, 243, 246);
+            border: 2px solid rgb(247, 19, 76);
+            border-radius: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: rgb(247, 19, 76);
+            transition: 0.5s;
+
+        }
+
+        .spec button:hover {
+            background-color: rgb(247, 19, 76);
+            color: rgb(255, 233, 239);
+        }
+
+        .recommended {
+            position: relative;
+            right: 1512px;
+            top: 501px;
+            display: flex;
+            flex-direction: row;
+
+
+            transition: 2s;
+        }
+
+        .recom {
+            height: 336px;
+            width: 290px;
+            border-radius: 5px;
+            background-color: rgb(253, 243, 246);
+            margin: 13px 38px;
+            padding: 6px;
+            font-family: 'Courier New', Courier, monospace;
+            display: inline-block;
+        }
+
+        .recom button {
+            background-color: rgb(253, 243, 246);
+            border: 2px solid rgb(247, 19, 76);
+            border-radius: 25px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: rgb(247, 19, 76);
+            transition: 0.5s;
+        }
+
+        .recom button ::focus {
+            background-color: rgb(247, 19, 76);
+            color: rgb(255, 233, 239);
+        }
+
+        .veg {
+            display: block;
+            position: relative;
+            float: left;
+            height: 23px;
+            margin: -10px 0px;
+        }
+
+        .price {
+            text-align: right;
+            font-weight: bold;
+            position: relative;
+            float: right;
+            margin: auto;
+        }
+
+        .add {
+            position: relative;
+            float: right;
+        }
+
+        .review {
+            width: 100%;
+            display: flex;
+            /* position: relative; */
+            /* float: left; */
+            position: absolute;
+            top: 993px;
+            flex-direction: column;
+            left: 26px;
+        }
+
+        .reviews {
+            width: 500px;
+            height: 100px;
+            margin: 15px;
+            padding: 10px;
+            border: 3px solid rgb(250, 239, 242);
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        #rev {
+            position: absolute;
+            left: 9px;
+            top: -78px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: xx-large;
+        }
+
+        .forms {
+            position: absolute;
+            top: 1500px;
+            left: 44px;
+        }
+
+        .form {
+            margin: 3px 3px;
+            padding: 3px;
+            width: 515px;
+        }
+
+        #revid {
+            height: 80px;
+        }
+
+        #footer {
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"
+                class="logo">
+            <h2 id="name">Cabana Cafe</h2>
+            <!-- Restraunt name -->
+            <div class="navigation">
+                <ul>
+                    <li><a href="#footer">Contact us</a></li>
+                    <li><a href="#rev">Review</a></li>
+                    <li><a href="#recommended">Recommended</a></li>
+                    <li><a href="#our-specialisation">Special</a></li>
+                    <li><a href="#name">Home</a></li>
+
+                </ul>
+            </div>
+            <!-- <div class="search">
+                <input type="text" placeholder="Search website">
+            </div> -->
+        </nav>
+        <div class="container">
+            <div class="item" id="item-1">
+                <h1>
+                    Welcome to <span>Cabana!</span>
+                </h1>
+                <p>
+                    Food is for <span>
+                        <bold>Body</bold>
+                    </span> <br>Italian is for <span>
+                        <bold>Soul!</bold>
+                    </span><br>
+                    Try our all new italian recipies <br>with Indian touch.
+                </p>
+                <a href="#our-specialisation"><button>Our Special</button></a>
+
+            </div>
+            <div class="item" id="item-2">
+                <img src="https://lh3.googleusercontent.com/kKjbqypuoH1_qpAmsRdn0bCIy7FAyMzDf0b9V3TkpWSUoDoc4GYb_ug6gF46FCU8Xm8v-lOEmBrWm0HMAmYhQITGuKBp0QccdSCF5GyfpKFo3bmzMpyj8sAFg9bvOXqlnzlmMZr42W-r1b1W-5hJdsI0FTc2SaV6vRwCMzwYQlbPt4FcnWoAx6iA8C54Y13_33yFkIpZwIC-TFPtL6Y4HpmhIkF4BeBSOvs5Qqe4y8SqJs_2QMeRSKpq_CacQTMraBc5IJX1Z82XAYZb2BOiMLmIQH2ETCKyHvCZdHvS_aFJEd72Y1A_p8qMtmuT9sM1uBR8xC1d4MQRp9X62k1uXJuYeZyQtnQ0NF4tlhvlLcPpIvaNHmqC_qAbuFK9JPHoFq7psyqy7ElSRqQw6wt7mx1CrWLXQxeb5Xtuv4t421VFDnpjeCkttcrpeszOQcmL9GI-fPMnHEOLpQyCrV9_AXc59UYlCQoWB_x8uBb2f1GQyriz872jE1xRQQQpn9JKTiYDi-mrtFB5zAbR2NF_gLlE26bXRPYnuBgJZn6pCbD8_3OcjATdpu41PsSKpInRQwL9fpL05-0rCW5-vNuqL9G1KH7HmtxwuzAh-KdT_MBlTcG1U77YB4sp_58FcMbbTX5SHLsTawfP_yRXzmD7qS3CLy9CD2ns4yAZoAAdhjRKqyNyHgdGbOA8LlvirRtOR3gYS28m9XjtfsNdXk7otKA=w625-h577-no?authuser=0"
+                    style="height: 493px;">
+
+
+            </div>
+        </div>
+
+
+
+    </header>
+    <h3 id="our-specialisation">
+        Our Specialisation<br>
+    </h3>
+
+    <div class="special">
+        <div class="spec" id="dish-1">
+            <img src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" style="height: 193px;
+                       border-radius:5px">
+            <h> <strong>Noodles</strong></h>
+            <button class="add">
+                Add+</button>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.Odio minima assumenda ad, quos nisi porro
+            </p>
+            <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                class="veg">
+            <p class="price"> Rs 1049/-</p>
+        </div>
+        <div class="spec" id="dish-2">
+            <img src="https://insanelygoodrecipes.com/wp-content/uploads/2020/12/Homemade-Ground-Beef-Lasagna-800x530.png"
+                style="height: 192px; 
+                       border-radius:5px">
+            <h> <strong>Cappuccino</strong></h><button class="add">
+                Add+</button>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio minima assumenda ad, quos nisi porro
+            </p>
+            <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                class="veg">
+            <p class="price">Rs 1049/-</p>
+        </div>
+        <div class="spec" id="dish-3">
+            <img src="https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                style="height: 194px;
+                       border-radius:5px">
+            <h> <strong>Pasta</strong></h><button class="add">
+                Add+</button>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio minima assumenda ad, quos nisi porro
+            </p>
+            <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                class="veg">
+
+            <p class="price">Rs 1049/-</p>
+        </div>
+        <div class="spec" id="dish-4">
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR96LjS2keD570jNgei3_f--6CJRm6r-pvgNg&usqp=CAU"
+                style="height: 193px; 
+                       border-radius:5px">
+            <h> <strong>Pizza</strong></h>
+            <button class="add">
+                Add+</button>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio minima assumenda ad, quos nisi porro
+            </p>
+            <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                class="veg">
+            <p class="price">Rs 1049/-</p>
+        </div>
+        <br>
+        <h3 id="recommended">Our Recommendations</h3>
+        <div class="recommended">
+            <div class="recom" id="food-1">
+                <img src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" style="height: 193px; 
+                           border-radius:5px">
+                <h> <strong>Noodles</strong></h>
+                <button class="add">
+                    Add+</button>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.Odio minima assumenda ad, quos nisi porro
+                </p>
+                <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                    class="veg">
+                <p class="price">Rs 1049/-</p>
+
+            </div>
+            <div class="recom" id="food-2">
+                <img src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" style="height: 193px; 
+                           border-radius:5px">
+                <h> <strong>Noodles</strong></h>
+                <button class="add">
+                    Add+</button>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.Odio minima assumenda ad, quos nisi porro
+                </p>
+                <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                    class="veg">
+                <p class="price">Rs 1049/-</p>
+            </div>
+            <div class="recom" id="food-3">
+                <img src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg" style="height: 193px; 
+                         border-radius:5px">
+                <h> <strong>Noodles</strong></h>
+                <button class="add">
+                    Add+</button>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.Odio minima assumenda ad, quos nisi porro
+                </p>
+                <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                    class="veg">
+                <p class="price">Rs 1049/-</p>
+            </div>
+            <div class="recom" id="food-4">
+                <img src="https://www.englishclub.com/images/vocabulary/food/italian/italian-food-640.jpg"
+                    style="height: 193px; border-radius:5px">
+                <h> <strong>Noodles</strong></h>
+                <button class="add">
+                    Add+</button>
+                <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit.Odio minima assumenda ad, quos nisi porro
+                </p>
+                <img src="https://www.pngkey.com/png/detail/261-2619381_chitr-veg-symbol-svg-veg-and-non-veg.png"
+                    class="veg">
+                <p class="price">Rs 1049/-</p>
+            </div>
+        </div>
+        <div class="review">
+            <h3 id="rev">Reviews</h3>
+            <div class="reviews" id="review-1">
+                <img src="https://pbs.twimg.com/profile_images/1342093969090609153/M6HpEN-o_400x400.jpg" style="border-radius: 50%;
+    height: 33px;
+    margin-right: 10px;
+    margin-top: -6px;"><strong>Xaviour</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, reprehenderit aliquid? Sunt, ad ipsa.
+                    Nostrum.</p>
+            </div>
+            <div class="reviews" id="review-2">
+                <img src="https://pbs.twimg.com/profile_images/1342093969090609153/M6HpEN-o_400x400.jpg" style="border-radius: 50%;
+    height: 33px;
+    margin-right: 10px;
+    margin-top: -6px;"><strong>Xaviour</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, reprehenderit aliquid? Sunt, ad ipsa.
+                    Nostrum.</p>
+            </div>
+            <div class="reviews" id="review-3">
+                <img src="https://pbs.twimg.com/profile_images/1342093969090609153/M6HpEN-o_400x400.jpg" style="border-radius: 50%;
+    height: 33px;
+    margin-right: 10px;
+    margin-top: -6px;"><strong>Xaviour</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, reprehenderit aliquid? Sunt, ad ipsa.
+                    Nostrum.</p>
+            </div>
+        </div>
+        <div class="random">
+            <img src="https://image.freepik.com/free-vector/isolated-illustration-man-girl-characters-with-smartphone-giving-stars-feedback-rating-website-online-review-concept-flat-illustration-white-background_143055-152.jpg"
+                style="    position: absolute;
+            right: -763px;
+            bottom: -1238px;
+            height: 700px;">
+        </div>
+        <div class="forms">
+            <form>
+                <input type="text" placeholder="Name" class="form">
+                <br>
+                <input type="email" placeholder="Email" class="form">
+                <br>
+                <textarea placeholder="Please give your review" class="form" id="revid"></textarea>
+                <button>submit</button>
+            </form>
+        </div>
+        <footer style="    position: absolute;
+    bottom: -1500px;
+    left: 29px;
+    width: 1470px;
+    background-color: rgb(253, 243, 246);" id="footer">
+            <strong>Official Id</strong>: Cabana@gmail.com
+            <br>
+            <strong>Tele no </strong>: 974XXXXXX
+            <br>
+            <strong>Address</strong>: Racecourse road, Nagpur | Follow us on insta and fb @Cabana_official
+        </footer>
+
+
+</body>
+
+</html>
